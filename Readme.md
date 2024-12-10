@@ -41,10 +41,8 @@ Readme.md Инструкции
 Инструкция по запуску:
 1) открываем папку currency_bot в vscode
 2) открываем терминал
-3) пишим python3 -m venv venv
-4) далее source venv/bin/activate
-5) pip install -r requirements.txt
-6) python main.py
+3) pip install -r requirements.txt (может быть, pip3)
+4) python main.py (запустить файл main.py)
 В телеграмме:
 @Currency_bobothth
 /start
