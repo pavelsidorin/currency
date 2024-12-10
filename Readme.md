@@ -64,3 +64,4 @@ currency_history.py
 currency.py
 main.py
 requirements.txt
+# currency
