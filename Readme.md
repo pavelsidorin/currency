@@ -15,12 +15,12 @@ add_rate(self, rate) // добавление курса в историю
 get_history(self) // получение истории курсов
 get_latest_rate(self) // последний записанный курс
 3) Class CurrencyBot // обрабатывает команды
-__init__(self, token) // конструктор класса, инициализация объекта CurrencyBot с заданными параметрами
-start(self, message) // обработка команды /start
-show_currency_info(self, message) // обработка команды с кодом заданной валюты
-show_currency_history(self, message) // обработка команды /history
-handle_message(self, message) // обработка нераспознанных команд
-run(self) // запуск
+__init__(self, token) Конструктор класса, инициализирует объект CurrencyBot с заданным токеном.
+start(self, update, context) Обработка команды start
+rates_command(self, update, context) Обработка команды /rates
+convert_command(self, update, context): Обработка команды /convert
+history_command(self, update, context) Обработка команды /history
+run(self) Запуск бота.
 # Структура
 main.py Основной файл для запуска
 currency.py Класс Currency
@@ -35,15 +35,32 @@ Readme.md Инструкции
 3) Бот выводит актуальный курс в рублях.
 4) Пишем команду /history (код валюты)
 5) Бот выводит список со статистикой изменения с точным временем
+6) /rates для вывода курса всех валют сразу
+7) /convert (сумма) (код валюты из которой) (код валюты в которою), например, /conver 100 USD EUR
 Проект позволяет быстро и удобно посмотреть официальный курс валюты не пользуясь дополнительными источниками.
 Инструкция по запуску:
-В терминале cd (путь до папки currency_bot)
-Активировать вертуальное окружение
-Скачать pip install -r requirements.txt
-export TOKEN = '8131168686:AAHDzfuW0l13F_mvSoiGHQHwLXVJVdjwIpY'
-Далее python3 main.py
+1) открываем папку currency_bot в vscode
+2) открываем терминал
+3) пишим python3 -m venv venv
+4) далее source venv/bin/activate
+5) pip install -r requirements.txt
+6) python main.py
 В телеграмме:
 @Currency_bobothth
 /start
 /(код валюты), например, /USD
 /history (код валюты), например, /history USD
+/convert (сумма) (код валюты из которой) (код валюты в которою), например, /conver 100 USD EUR
+/rates для вывода курса всех валют сразу
+надо модули сложить в src (-1)
+в целом как-то маловато (-2)
+нету инструкции по запуску (-1)
+не работает! (->0) (у тебя последний шанс сделать так, чтобы работало)
+Порядок файлов:
+.env
+config.py
+currency_bot.py
+currency_history.py
+currency.py
+main.py
+requirements.txt

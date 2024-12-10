@@ -8,5 +8,5 @@ class Currency:
         self.rate = rate  # Курс валюты
 
     def __str__(self) -> str:
-        """Возвращает строкову с объектами Currency."""
-        return f'{self.name} ({self.code}): {self.rate}'
+        """Возвращает строковое представление объекта Currency."""
+        return f'{self.name} ({self.code}): {self.rate} RUB'

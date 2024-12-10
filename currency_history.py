@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import List, Dict, Optional, Any
 
+
 class CurrencyHistory:
     """Класс для хранения истории курсов валюты."""
 
